@@ -4,10 +4,53 @@ This is an example Github repository how to convert a TradingView based PineScri
 trading strategy to TradingStrategy.ai Python format.
 
 - Execute your strategy in a counterparty risk free manner 
-- Get lower fees on decentralised exchanges
+- Broker free, direct to exchange
+- Have 100% control of your strategy market data and live execution
+- [Low trading fees on efficient decentralised markets](https://tradingstrategy.ai/blog/most-efficient-market-is-on-a-public-blockchain-and-decentralised)
 - Convert your trading algorithm to a on-chain fund
+- Benefits of rich Python quant finance libraries like `pandas_ta` and `quantmetrics`
 
 This example repository was made for Avalanche Summit II workshop.
+
+## About the example strategy
+
+The example strategy is presented as a [PineScript source file](./bollinger_band_example_tradingview_strategy.pine) 
+and then corresponding Python strategy module for [Trading Strategy](https://tradingstrategy.ai/docs/).
+
+The example strategy is a Bollinger Band based strategy. 
+It is recommended to be used with
+
+- Volatile cryptocurrencies - tested with MATIC/USD
+- Long only - suitable for [DEX spot markets](https://tradingstrategy.ai/glossary/spot-market)
+- Daily OHCLV candles
+
+### Notable differences between Python and PineScript
+
+- Python data is presented as Pandas DataFrame's - the de facto core unit of any data science,
+  whereas TradingView uses its own data format.
+- Python time series are zero indexed. Zero is the oldest item and minus one is the latest.
+
+PineScript:
+
+```pinescript
+
+```
+
+Python:
+
+```python
+
+```
+
+### Example of TradingView
+
+- Import the script to TradingView
+- Choose XXX/USD market
+- Shwo the backtest results
+
+### Example of Jupyter notebook
+
+- Run in Visual Studio Code, as described below
 
 ## Preqrequisites
 

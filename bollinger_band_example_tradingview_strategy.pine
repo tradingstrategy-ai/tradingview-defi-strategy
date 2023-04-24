@@ -1,0 +1,59 @@
+//@version=5
+strategy("BB Strategy TS", overlay=true, initial_capital = 5000, default_qty_type = strategy.percent_of_equity, default_qty_value = 50)
+source = close
+length = input.int(20) //SMA line length in BB
+RSIlength = input.int(14)
+RSIlimit = input.int(60) //RSI limit for filterin entries
+mult = input.float(1.0, minval=0.001, maxval=50) //BB standard deviation multiplier
+//profitPerc = input.float(7.5, minval=0.1, step=0.1)
+stopPerc = input.float(1.0, minval=0.1, step=0.1) // stoploss percentage
+
+
+basis = ta.ema(source, length)
+dev = mult * ta.stdev(source, length)
+upper = basis + dev
+lower = basis - dev
+plot(upper, title="BB_upper", color=color.blue, linewidth=1, style=plot.style_line)
+plot(lower, title="BB_lower", color=color.blue, linewidth=1, style=plot.style_line)
+plot(basis, title="BB_basis", color=color.yellow, linewidth=1, style=plot.style_line)
+
+RSI = ta.rsi(close, RSIlength)
+
+// Inputs that configure the backtest's date range
+useDateFilter = input.bool(true, title="Filter Date Range of Backtest",
+     group="Backtest Time Period")
+backtestStartDate = input.time(timestamp("1 Jun 2022"),
+     title="Start Date", group="Backtest Time Period")
+backtestEndDate = input.time(timestamp("1 Apr 2023"),
+     title="End Date", group="Backtest Time Period")
+
+
+// Check if current bar falls inside the date range
+inTradeWindow = not useDateFilter or (time >= backtestStartDate and
+     time < backtestEndDate)
+
+
+buyEntry = ta.crossover(source, upper)
+//sellEntry = ta.crossunder(source, lower)
+
+buyExitPrice = ta.crossunder(source, basis)  //strategy.position_avg_price * (1 + profitPerc/100)
+//sellExitPrice = strategy.position_avg_price * (1 - profitPerc/100)
+
+//buyExit = buyExitPrice // high > buyExitPrice
+//sellExit = low < sellExitPrice
+
+
+buyStopPrice = strategy.position_avg_price * (1 - stopPerc/100)
+//sellStopPrice = strategy.position_avg_price * (1 + stopPerc/100)
+
+buyStop = low < buyStopPrice
+//sellStop = high > sellStopPrice
+
+if (buyEntry and inTradeWindow and RSI > RSIlimit and not (strategy.position_size > 0) and not (strategy.position_size < 0))
+	strategy.entry("BBLE", strategy.long, oca_name="BB Entry", comment="BBLE")
+
+if (strategy.position_size > 0)
+	strategy.close_all(buyExitPrice)
+
+if (strategy.position_size > 0)
+	strategy.close_all(buyStop, comment="Long Stop")
