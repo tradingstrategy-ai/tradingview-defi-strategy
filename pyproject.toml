@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "tradingview-defi-strategy"
 version = "0.1.0"
-description = "An example how to convert PineScript based algorithmig trading strategy to DeFi"
+description = "An example how to convert PineScript based algorithmig trading strategy for DeFi"
 authors = ["Mikko Ohtamaa <mikko@opensourcehacker.com>"]
 readme = "README.md"
 packages = [{include = "onchain_quant_workshop"}]
