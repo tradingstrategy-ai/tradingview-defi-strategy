@@ -22,7 +22,7 @@ The example strategy is a simplified [Bollinger band](https://github.com/trading
 **Whether it makes profit or not is outside the scope of the example.** The strategy is not optimised at all and parameters
 are picked more or less by a gut feeling. Please use this example as learning material and base for your own strategies. 
 
-- Use Bollinger Band's to determine entrys and exists
+- Use Bollinger Band's and [RSI](equity-curve-coinbase-with-fees.png) to determine position entries
 - Long only - suitable for [DEX spot markets](https://tradingstrategy.ai/glossary/spot-market)
 - Daily timeframe for candles
 - Backtesting period of 2022-01-01 - 2023-04-01
@@ -63,6 +63,10 @@ Both strategies open positions in a similar fashion, so they are more or less co
 At least some of positions like ~Jul 20th are opened around the same time, 
 so we do see that the strategy is following the same pattern.
 
+**Note**: Minor differences between TradingView and Python technical indicator calculations 
+might result to different code execution. However, the example code should be matching enough to demostrate how
+to port over TradingView scripts.
+
 ### Summary of the strategy performance
 
 A lot of stop losses are triggered as expected. On TradingView the losses on a stop are deeper than the target 0.25%,
@@ -80,17 +84,23 @@ How well the strategy would have historically performed on ETH-USDC on Coinbase 
 ![equity curve coinbase](./screenshots/equity-curve-coinbase.png)
 
 However, if we switch on 50 BPS taker fee on Coinbase we can see it destroys the strategy performance,
-going for break even to -7% PnL.
+going to loss. 
 
 ![equity curve coinbase with fee](./screenshots/equity-curve-coinbase-with-fees.png)
 
-### Price action
+### Price action and positions
 
-We can compare price action views between Jupyter Notebook and TradingView.
+Here is a screenshot of individual won/lost positions in Python strategy.
 
+![price action and positions](./screenhots/price-action-and-positions.png)
 
+### Position timeline
 
-## Example files
+Here are individual positions.
+
+![position timeline](./screenhots/timeline.png)
+
+## Example code
 
 The example strategy is presented as  
 
