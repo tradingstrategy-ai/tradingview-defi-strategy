@@ -295,6 +295,17 @@ that is installed with Poetry.
 
 Run the notebook.
 
+### Running backtest notebooks Jupyter
+
+You can start Jupyter by:
+
+```shell
+poetry shell
+jupyter notebook
+```
+Then choose a notebook from the file explorer and run it
+
+
 ## Next steps
 
 - [Join Trading Strategy community Discord for discussion and questions](https://tradingstrategy.ai/docs/)
