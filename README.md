@@ -5,6 +5,29 @@ trading strategy to [TradingStrategy.ai](https://tradingstrategy.ai) Python form
 
 This example repository was made for [Avalanche Summit II workshop](https://tradingstrategy.ai/blog/avalanche-summit-ii-workshop).
 
+   * [Benefits of DeFi trading](#benefits-of-defi-trading)
+   * [Preqrequisites](#preqrequisites)
+      * [Your skills](#your-skills)
+      * [Software](#software)
+   * [About the example strategy](#about-the-example-strategy)
+      * [Technical indicator documentation](#technical-indicator-documentation)
+   * [Strategy performance results and algorithm porting notes](#strategy-performance-results-and-algorithm-porting-notes)
+      * [Equity curve](#equity-curve)
+      * [Price action and positions](#price-action-and-positions)
+      * [Trading summary](#trading-summary)
+      * [Position timeline](#position-timeline)
+   * [Example code](#example-code)
+   * [Notable differences between Python and PineScript](#notable-differences-between-python-and-pinescript)
+   * [About trading on decentralised finance](#about-trading-on-decentralised-finance)
+      * [DEX trading fees](#dex-trading-fees)
+   * [Installation](#installation)
+      * [API key](#api-key)
+   * [Running backtests](#running-backtests)
+      * [Running backtest notebooks from terminal](#running-backtest-notebooks-from-terminal)
+      * [Running backtest notebooks with Visual Studio Code](#running-backtest-notebooks-with-visual-studio-code)
+   * [Next steps](#next-steps)
+
+
 ## Benefits of DeFi trading
 
 Running your trading strategy on [decentralised exchanges](https://tradingstrategy.ai/glossary/decentralised-exchange) instead of centralised exchanges have several benefits:
@@ -15,6 +38,23 @@ Running your trading strategy on [decentralised exchanges](https://tradingstrate
 - [Low trading fees on efficient decentralised markets](https://tradingstrategy.ai/blog/most-efficient-market-is-on-a-public-blockchain-and-decentralised)
 - Convert your trading algorithm to a on-chain fund
   - Benefits of rich Python quant finance libraries like `pandas_ta` and `quantmetrics`=
+
+## Preqrequisites
+
+### Your skills
+
+To work with this example, you need to have
+
+- Basic experience in cryptocurrencies
+- Basic experience in trading
+- Experience in TradingView's PineScript
+- Junior software developer level experience in Python
+
+### Software 
+
+- Python 3.10
+- [Poetry package manager for Python](https://tradingstrategy.ai/community)
+- Git
 
 ## About the example strategy
 
@@ -27,15 +67,13 @@ are picked more or less by a gut feeling. Please use this example as learning ma
 - Daily timeframe for candles
 - Backtesting period of 2022-01-01 - 2023-04-01
 - Use a tight stop loss when entering a position
-  - This will result to multiple positions closed for stop loss and few profitable positions during the market rally
+  - This will result to multiple positions closed for stop loss and few profitable positions during market rallies
 
 - We target the following live trading pairs 
   - [ETH/USDC pair on Uniswap v3 on Polygon with 5 BPS fee tier](https://tradingstrategy.ai/trading-view/polygon/uniswap-v3/eth-usdc-fee-5).
     See a note about this in `decide_trades()` Python code.
-  - Against [Coinbase ETH/USDC 60 BPS taker fee](https://help.coinbase.com/en/exchange/trading-and-funding/exchange-fees) (12x more expensive than DeFi)
-
-- Both strategy implementations take a low number of positions, 10-20 positions for the backtesting period
-  
+  - [Coinbase ETH/USDC with 60 BPS market taker fee](https://help.coinbase.com/en/exchange/trading-and-funding/exchange-fees) (12x more expensive than DeFi)
+ 
 **Note**: Long only strategies are challenging in a descending or sideways cryptocurrencies market like 2021-2023.
 
 ### Technical indicator documentation
@@ -51,14 +89,12 @@ Find documentation for technical indicators used in the example
 - [Bollinger bands](https://tradingstrategy.ai/docs/programming/api/technical-analysis/volatility/help/pandas_ta.volatility.bbands.html#bbands):
   A popular volatility indicator by John Bollinger.
 
-## Comparing the strategy results
+## Strategy performance results and algorithm porting notes
 
-Both strategies open positions in a similar fashion, so they are more or less comparable.
+Both TradingView and Trading Strategy strategies open positions in a similar fashion, so they are more or less comparable.
 
 **Because of the different price feeds and other subtle differences you cannot have the same strategy backtest
     result on two different markets**.
-
-### Algorithm porting notes
 
 At least some of positions like ~Jul 20th are opened around the same time, 
 so we do see that the strategy is following the same pattern.
@@ -67,11 +103,8 @@ so we do see that the strategy is following the same pattern.
 might result to different code execution. However, the example code should be matching enough to demostrate how
 to port over TradingView scripts.
 
-### Summary of the strategy performance
-
-A lot of stop losses are triggered as expected. On TradingView the losses on a stop are deeper than the target 0.25%,
-because of how PineScript backtesting is structured - it cannot use more accurate stop loss signal for daily candles,
-like Trading Strategy is doing.
+Both strategy implementations make a low number of trades, 10-20, for the backtesting period.
+This makes it easier to demostrate the the example.
 
 ### Equity curve
 
@@ -92,13 +125,61 @@ going to loss.
 
 Here is a screenshot of individual won/lost positions in Python strategy.
 
-![price action and positions](./screenhots/price-action-and-positions.png)
+![price action and positions](./screenshots/price-action-and-positions.png)
+
+### Trading summary
+
+Summary statistics are calculated as follow:
+
+```                                                
+Trading period length                     357 days
+Return %                                    15.80%
+Annualised return %                         16.15%
+Cash at start                            $5,000.00
+Value at end                             $5,789.98
+Trade volume                            $32,605.76
+Position win percent                        33.33%
+Total positions                                  6
+Won positions                                    2
+Lost positions                                   4
+Stop losses triggered                            4
+Stop loss % of all                          66.67%
+Stop loss % of lost                        100.00%
+Winning stop losses                              0
+Winning stop losses percent                  0.00%
+Losing stop losses                               4
+Losing stop losses percent                 100.00%
+Take profits triggered                           0
+Take profit % of all                         0.00%
+Take profit % of won                         0.00%
+Zero profit positions                            0
+Positions open at the end                        0
+Realised profit and loss                   $789.98
+Portfolio unrealised value                   $0.00
+Extra returns on lending pool interest       $0.00
+Cash left at the end                     $5,789.98
+Average winning position profit %           20.72%
+Average losing position loss %              -2.50%
+Biggest winning position %                  22.55%
+Biggest losing position %                   -2.95%
+Average duration of winning positions      35 days
+Average duration of losing positions        5 days
+LP fees paid                                $16.31
+LP fees paid % of volume                     0.05%
+Average position:                            5.24%
+Median position:                            -2.16%
+Most consecutive wins                            1
+Most consecutive losses                          2
+Biggest realized risk                       -1.47%
+Avg realised risk                           -1.25%
+Max pullback of total capital               -2.91%
+```
 
 ### Position timeline
 
 Here are individual positions.
 
-![position timeline](./screenhots/timeline.png)
+![position timeline](./screenshots/timeline.png)
 
 ## Example code
 
@@ -137,24 +218,13 @@ Some differences programmer's should note:
   the latest value of time series is in the last index of an array, noted by `-1` and the oldest value is in zero index `0`.
   In PineScript, this is the opposite, where the latest value is noted without index or index 0.
 
-### Example of TradingView
-
-- Import the script to TradingView
-- Choose XXX/USD market
-- Shwo the backtest results
-
-### Example of Jupyter notebook
-
-- Run in Visual Studio Code, as described below
-
-
 ## About trading on decentralised finance
 
 ### DEX trading fees
 
 You have four elements of fees
 
-- Blockchain transaction costs or [gas fees]()
+- Blockchain transaction costs or [gas fees](https://tradingstrategy.ai/glossary/gas-fee)
   - Going towards zero and neglible in the future
 - Trading fee, which consists of
   - [Liquidity provider fee](https://tradingstrategy.ai/glossary/liquidity-provider) 
@@ -170,23 +240,6 @@ You have four elements of fees
   - Usually orders are signed with maximum slippage
 - AMM and [CLMM](https://tradingstrategy.ai/glossary/clmm) based DEXes do not have slippage
 
-## Preqrequisites
-
-### Skills
-
-To work with this example, you need to have
-
-- Basic experience in cryptocurrencies
-- Basic experience in trading
-- Experience in TradingView's PineScript
-- Junior software developer level experience in Python
-
-### Software 
-
-- Python 3.10
-- [Poetry package manager for Python](https://tradingstrategy.ai/community)
-- Git
-
 ## Installation
 
 Make a git clone of this repository and then run `poetry` to create a Python environment for your project.
@@ -198,9 +251,11 @@ poetry install
 
 ### API key
 
-When you run the notebook for the first time, you will be prompted to register to give an API key for Trading Strategy datasets.
+When you run the notebook for the first time, you will be prompted to register to give an API key to download Trading Strategy datasets.
 
-## Running backtest notebooks from terminal
+## Running backtests
+
+### Running backtest notebooks from terminal
 
 Running the backtesting notebook in a terminal is the most robust, though not that useful method 
 
@@ -258,7 +313,7 @@ Max pullback of total capital                0.00%
 Max loss risk at opening of position         0.00%
 ```
 
-## Running backtest notebooks with Visual Studio Code
+### Running backtest notebooks with Visual Studio Code
 
 First start a server from command line
 
