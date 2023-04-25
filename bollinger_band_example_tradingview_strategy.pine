@@ -51,3 +51,5 @@ if ta.crossover(source, upper) and inTradeWindow and RSI > RSIlimit and (strateg
 // Close the position if we have dropped below the EMA
 if ta.crossunder(source, basis)
     strategy.close_all(comment="Moving average exit")
+
+
