@@ -270,64 +270,28 @@ How to run:
 ipython bollinger_band_example_defi_strategy.ipynb 
 ```
 
-This will open couple of browser tabs and print out the results
-
-```
-Trading period length                       0 days
-Return %                                     0.00%
-Annualised return %                              -
-Cash at start                           $10,000.00
-Value at end                            $10,000.00
-Trade volume                                 $0.00
-Position win percent                             -
-Total positions                                  0
-Won positions                                    0
-Lost positions                                   0
-Stop losses triggered                            0
-Stop loss % of all                               -
-Stop loss % of lost                              -
-Take profits triggered                           0
-Take profit % of all                             -
-Take profit % of won                             -
-Zero profit positions                            0
-Positions open at the end                        0
-Realised profit and loss                     $0.00
-Portfolio unrealised value                   $0.00
-Extra returns on lending pool interest       $0.00
-Cash left at the end                    $10,000.00
-Average winning position profit %                -
-Average losing position loss %                   -
-Biggest winning position %                       -
-Biggest losing position %                        -
-Average duration of winning positions       0 days
-Average duration of losing positions        0 days
-LP fees paid                                 $0.00
-LP fees paid % of volume                     0.00%
-Average position:                            0.00%
-Median position:                             0.00%
-Most consecutive wins                            0
-Most consecutive losses                          0
-Biggest realized risk                        0.00%
-Avg realised risk                            0.00%
-Max pullback of total capital                0.00%
-Max loss risk at opening of position         0.00%
-```
+This will open a couple of browser tabs and print out the trading summary as
 
 ### Running backtest notebooks with Visual Studio Code
 
-First start a server from command line
+Visual Studio Code is the recommended tool for the backtest development.
+
+First start Poetry environment in a terminal:
 
 ```shell
 poetry shell
-jupyter server 
 ```
 
-Copy the kernel URL with the secret token from the console output.] 
+**Within this shell session**, start Visual Studio Code.
 
-Open any notebook in Visual Studio Code.
+```shell
+code 
+```
 
-Use `Select Kernel` at the top right of the screen, choose Remot Jupyter Kernel, add URL option.
-Paste in the URL  (should b e automatically pasted).
+Open a notebook in Visual Studio Code.
+
+Use `Select Kernel` at the top right of the screen. Visual Studio Code should recommend you the same Python virtual environment
+that is installed with Poetry.
 
 Run the notebook.
 
