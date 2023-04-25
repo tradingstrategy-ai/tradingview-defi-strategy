@@ -5,8 +5,8 @@ trading strategy to [TradingStrategy.ai](https://tradingstrategy.ai) Python form
 
 This example repository was made for [Avalanche Summit II workshop](https://tradingstrategy.ai/blog/avalanche-summit-ii-workshop).
 
-   * [Benefits of DeFi trading](#benefits-of-defi-trading)
-   * [Preqrequisites](#preqrequisites)
+   * [Benefits of DeFi for algorithmic traders](#benefits-of-defi-for-algorithmic-traders)
+   * [Prerequisites](#prerequisites)
       * [Your skills](#your-skills)
       * [Software](#software)
    * [About the example strategy](#about-the-example-strategy)
@@ -28,7 +28,7 @@ This example repository was made for [Avalanche Summit II workshop](https://trad
    * [Next steps](#next-steps)
 
 
-## Benefits of DeFi trading
+## Benefits of DeFi for algorithmic traders
 
 Running your trading strategy on [decentralised exchanges](https://tradingstrategy.ai/glossary/decentralised-exchange) instead of centralised exchanges have several benefits:
 
@@ -39,7 +39,7 @@ Running your trading strategy on [decentralised exchanges](https://tradingstrate
 - Convert your trading algorithm to a on-chain fund
   - Benefits of rich Python quant finance libraries like `pandas_ta` and `quantmetrics`=
 
-## Preqrequisites
+## Prerequisites
 
 ### Your skills
 
