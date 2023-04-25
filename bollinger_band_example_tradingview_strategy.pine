@@ -22,16 +22,14 @@ RSI = ta.rsi(close, RSIlength)
 // Inputs that configure the backtest's date range
 useDateFilter = input.bool(true, title="Filter Date Range of Backtest",
      group="Backtest Time Period")
-backtestStartDate = input.time(timestamp("1 Jun 2022"),
+backtestStartDate = input.time(timestamp("1 Jun 2021"),
      title="Start Date", group="Backtest Time Period")
 backtestEndDate = input.time(timestamp("1 Apr 2023"),
      title="End Date", group="Backtest Time Period")
 
-
 // Check if current bar falls inside the date range
 inTradeWindow = not useDateFilter or (time >= backtestStartDate and
      time < backtestEndDate)
-
 
 buyEntry = ta.crossover(source, upper)
 //sellEntry = ta.crossunder(source, lower)

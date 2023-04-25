@@ -3,6 +3,10 @@
 This is an example Github repository how to convert a TradingView based PineScript algorithmic 
 trading strategy to TradingStrategy.ai Python format.
 
+## Benefits of DeFi trading
+
+Running your trading strategy on [decentralised exchanges](https://tradingstrategy.ai/glossary/decentralised-exchange) instead of centralised exchanges have several benefits:
+
 - Execute your strategy in a counterparty risk free manner 
 - Broker free, direct to exchange
 - Have 100% control of your strategy market data and live execution
@@ -14,6 +18,9 @@ This example repository was made for Avalanche Summit II workshop.
 
 ## About the example strategy
 
+The example strategy is a simplified [Bollinger band](https://github.com/tradingstrategy-ai/tradingview-defi-strategy) strategy.
+**Whether it makes profit or not is outside the scope of the example.** You can use it as a base for your own strategies. 
+
 The example strategy is presented as a 
 
 - [PineScript source file](./bollinger_band_example_tradingview_strategy.pine) 
@@ -22,14 +29,40 @@ The example strategy is presented as a
 The example strategy is a Bollinger Band based strategy. 
 It is recommended to be used with
 
-- Volatile cryptocurrencies - tested with MATIC/USD
+- We target live trading against [ETH/USDC pair on Uniswap v3 on Polygon with 5 BPS fee tier](https://tradingstrategy.ai/trading-view/polygon/uniswap-v3/eth-usdc-fee-5).
+- Volatile cryptocurrencies - tested with ETH/USD
 - Long only - suitable for [DEX spot markets](https://tradingstrategy.ai/glossary/spot-market)
+- Long only strategies do not work well in a descending market like 2021-2023
 - Daily OHCLV candles
 
-### Notable differences between Python and PineScript
+## Notable differences between Python and PineScript
 
+Some major differences between Python and PineScript:
+
+- Python is a general purpose programming language, making a vast numbers of tutorials, books and courses available for it.
+- Python is open source - making a vast number of software libraries like technical indicators and statistics available for it.
+- TradingView's PineScript is optimised to be used with their service only. It is streamlined, easier to work with,
+  but inflexible.
+- PineScript is fast: backtests complete fast as it is simplified what PineScript can do. 
 - Python data is presented as Pandas DataFrame's - the de facto core unit of any data science,
   whereas TradingView uses its own data format.
+- Trading Strategy's `decide_trades()` function is designed to suit all kind of strategies, including portfolio construction, lending strategies,
+  liquidity provider positions and such. Thus, it will return a list of trades to be executed on a blockchain to enter a new position
+  and you have more finer-grained control than PineScript's entry/exit that has been designed for traditional stock markets.
+- Trading Strategy supports natively *take profit*, *stop loss* and *trailing stop loss* triggers for trading positions.
+  Whereas in PineScript you need to emulate these. Trading Strategy engine can trigger these more accurately than what you would get 
+  in PineScript.
+
+
+Some differences traders should note:
+
+- Because the price feed is not 1:1 same (different exchanges),
+  different trades will be taken at a different time
+- Depending on a blockchain and DEX, the assets use wrapped token notation.
+  E.g. `ETH` becomes `WETH`. This is due to the technical limitations of [EVM-compatible blockchains](https://tradingstrategy.ai/glossary/evm-compatible).
+
+Some differences programmers should note:
+
 - Python time series are zero indexed. Zero is the oldest item and minus one is the latest.
 
 PineScript:
@@ -117,7 +150,7 @@ Running the backtesting notebook in a terminal is the most robust, though not th
 How to run:
 
 ```shell
-ipython example.ipynlb
+ipython bollinger_band_example_defi_strategy.ipynb 
 ```
 
 This will open couple of browser tabs and print out the results
