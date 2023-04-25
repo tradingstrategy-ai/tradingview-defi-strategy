@@ -37,12 +37,12 @@ buyExitPrice = ta.crossunder(source, basis)  //strategy.position_avg_price * (1 
 //sellExitPrice = strategy.position_avg_price * (1 - profitPerc/100)
 
 //buyExit = buyExitPrice // high > buyExitPrice
-//sellExit = low < sellExitPrice
+//sellExit = close < sellExitPrice
 
 buyStopPrice = strategy.position_avg_price * (1 - stopPerc/100)
 //sellStopPrice = strategy.position_avg_price * (1 + stopPerc/100)
 
-buyStop = low < buyStopPrice
+buyStop = close < buyStopPrice
 //sellStop = high > sellStopPrice
 
 if (buyEntry and inTradeWindow and RSI > RSIlimit and not (strategy.position_size > 0) and not (strategy.position_size < 0))
