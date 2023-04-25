@@ -3,6 +3,8 @@
 This is an example Python project how to convert a TradingView based PineScript algorithmic 
 trading strategy to [TradingStrategy.ai](https://tradingstrategy.ai) Python format.
 
+This example repository was made for [Avalanche Summit II workshop](https://tradingstrategy.ai/blog/avalanche-summit-ii-workshop).
+
 ## Benefits of DeFi trading
 
 Running your trading strategy on [decentralised exchanges](https://tradingstrategy.ai/glossary/decentralised-exchange) instead of centralised exchanges have several benefits:
@@ -12,14 +14,13 @@ Running your trading strategy on [decentralised exchanges](https://tradingstrate
 - Have 100% control of your strategy market data and live execution
 - [Low trading fees on efficient decentralised markets](https://tradingstrategy.ai/blog/most-efficient-market-is-on-a-public-blockchain-and-decentralised)
 - Convert your trading algorithm to a on-chain fund
-- Benefits of rich Python quant finance libraries like `pandas_ta` and `quantmetrics`
-
-This example repository was made for Avalanche Summit II workshop.
+- Benefits of rich Python quant finance libraries like `pandas_ta` and `quantmetrics`=
 
 ## About the example strategy
 
 The example strategy is a simplified [Bollinger band](https://github.com/tradingstrategy-ai/tradingview-defi-strategy) strategy.
-**Whether it makes profit or not is outside the scope of the example.** You can use it as a base for your own strategies. 
+**Whether it makes profit or not is outside the scope of the example.** The strategy is not optimised at all and parameters
+are picked more or less by a gut feeling. Please use this example as learning material and base for your own strategies. 
 
 - Use Bollinger Band's to determine entrys and exists
 - Long only - suitable for [DEX spot markets](https://tradingstrategy.ai/glossary/spot-market)
@@ -34,18 +35,58 @@ The example strategy is a simplified [Bollinger band](https://github.com/trading
   - Against [Coinbase ETH/USDC 60 BPS taker fee](https://help.coinbase.com/en/exchange/trading-and-funding/exchange-fees) (12x more expensive than DeFi)
 
 - Both strategy implementations take a low number of positions, 10-20 positions for the backtesting period
-  - Because of the different price feeds and other subtle differences you cannot have the same strategy backtest
-    result on two different markets
-
+  
 **Note**: Long only strategies are challenging in a descending or sideways cryptocurrencies market like 2021-2023.
+
+### Technical indicator documentation
+
+Find documentation for technical indicators used in the example
+
+- [Exponential moving average (EMA)](https://tradingstrategy.ai/docs/programming/api/technical-analysis/overlap/help/pandas_ta.overlap.ema.html#ema):
+  The Exponential Moving Average is a more responsive moving average compared to the Simple Moving Average (SMA). The weights are determined by alpha which is proportional to it’s length. 
+
+- [Relative strength indicator (RSI)](https://tradingstrategy.ai/docs/programming/api/technical-analysis/momentum/help/pandas_ta.momentum.rsi.html#rsi):
+  The Relative Strength Index is a popular momentum oscillator used to measure the velocity as well as the magnitude of directional price movements.
+
+- [Bollinger bands](https://tradingstrategy.ai/docs/programming/api/technical-analysis/volatility/help/pandas_ta.volatility.bbands.html#bbands):
+  A popular volatility indicator by John Bollinger.
 
 ## Comparing the strategy results
 
 Both strategies open positions in a similar fashion, so they are more or less comparable.
 
-A lot of stop losses are triggered as expected. On TradingView the stop losses are deeper than the target 0.25%,
+**Because of the different price feeds and other subtle differences you cannot have the same strategy backtest
+    result on two different markets**.
+
+### Algorithm porting notes
+
+At least some of positions like ~Jul 20th are opened around the same time, 
+so we do see that the strategy is following the same pattern.
+
+### Summary of the strategy performance
+
+A lot of stop losses are triggered as expected. On TradingView the losses on a stop are deeper than the target 0.25%,
 because of how PineScript backtesting is structured - it cannot use more accurate stop loss signal for daily candles,
 like Trading Strategy is doing.
+
+### Equity curve
+
+How well the strategy would have historically performed on ETH-USDC pair on Uniswap v3 on Polygon (5 BPS fee).
+
+![equity curve trading strategy](./screenshots/equity-curve.png)
+
+How well the strategy would have historically performed on ETH-USDC on Coinbase (no fees).
+
+![equity curve coinbase](./screenshots/equity-curve-coinbase.png)
+
+However, if we switch on 50 BPS taker fee on Coinbase we can see it destroys the strategy performance,
+going for break even to -7% PnL.
+
+![equity curve coinbase with fee](./screenshots/equity-curve-coinbase-with-fees.png)
+
+### Price action
+
+We can compare price action views between Jupyter Notebook and TradingView.
 
 
 
@@ -60,7 +101,7 @@ The example strategy is presented as
 
 Some major differences between Python and PineScript:
 
-- Python is a general purpose programming language, making a vast numbers of tutorials, books and courses available for it.
+- Python is a general-purpose programming language, making a vast number of tutorials, books and courses available for it.
 - Python is open source - making a vast number of software libraries like technical indicators and statistics available for it.
 - TradingView's PineScript is optimised to be used with their service only. It is streamlined, easier to work with,
   but inflexible.
@@ -83,21 +124,11 @@ Some differences traders should note:
 - Depending on a blockchain and DEX, the assets use wrapped token notation.
   E.g. `ETH` becomes `WETH`. This is due to the technical limitations of [EVM-compatible blockchains](https://tradingstrategy.ai/glossary/evm-compatible).
 
-Some differences programmers should note:
+Some differences programmer's should note:
 
-- Python time series are zero indexed. Zero is the oldest item and minus one is the latest.
-
-PineScript:
-
-```pinescript
-
-```
-
-Python:
-
-```python
-
-```
+- Python use the zero indexed arrays unlike PineScript that uses reverse arrays. In Python, like in most programming languages,
+  the latest value of time series is in the last index of an array, noted by `-1` and the oldest value is in zero index `0`.
+  In PineScript, this is the opposite, where the latest value is noted without index or index 0.
 
 ### Example of TradingView
 
@@ -135,6 +166,8 @@ You have four elements of fees
 ## Preqrequisites
 
 ### Skills
+
+To work with this example, you need to have
 
 - Basic experience in cryptocurrencies
 - Basic experience in trading
