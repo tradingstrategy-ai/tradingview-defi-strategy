@@ -1,7 +1,7 @@
-# TradingView to TradingStrategy.ai algorithmic DeFi trading strategy conversion
+ # TradingView to TradingStrategy.ai algorithmic DeFi trading strategy conversion
 
-This is an example Github repository how to convert a TradingView based PineScript algorithmic 
-trading strategy to TradingStrategy.ai Python format.
+This is an example Python project how to convert a TradingView based PineScript algorithmic 
+trading strategy to [TradingStrategy.ai](https://tradingstrategy.ai) Python format.
 
 ## Benefits of DeFi trading
 
@@ -21,19 +21,40 @@ This example repository was made for Avalanche Summit II workshop.
 The example strategy is a simplified [Bollinger band](https://github.com/tradingstrategy-ai/tradingview-defi-strategy) strategy.
 **Whether it makes profit or not is outside the scope of the example.** You can use it as a base for your own strategies. 
 
-The example strategy is presented as a 
+- Use Bollinger Band's to determine entrys and exists
+- Long only - suitable for [DEX spot markets](https://tradingstrategy.ai/glossary/spot-market)
+- Daily timeframe for candles
+- Backtesting period of 2022-01-01 - 2023-04-01
+- Use a tight stop loss when entering a position
+  - This will result to multiple positions closed for stop loss and few profitable positions during the market rally
+
+- We target the following live trading pairs 
+  - [ETH/USDC pair on Uniswap v3 on Polygon with 5 BPS fee tier](https://tradingstrategy.ai/trading-view/polygon/uniswap-v3/eth-usdc-fee-5).
+    See a note about this in `decide_trades()` Python code.
+  - Against [Coinbase ETH/USDC 60 BPS taker fee](https://help.coinbase.com/en/exchange/trading-and-funding/exchange-fees) (12x more expensive than DeFi)
+
+- Both strategy implementations take a low number of positions, 10-20 positions for the backtesting period
+  - Because of the different price feeds and other subtle differences you cannot have the same strategy backtest
+    result on two different markets
+
+**Note**: Long only strategies are challenging in a descending or sideways cryptocurrencies market like 2021-2023.
+
+## Comparing the strategy results
+
+Both strategies open positions in a similar fashion, so they are more or less comparable.
+
+A lot of stop losses are triggered as expected. On TradingView the stop losses are deeper than the target 0.25%,
+because of how PineScript backtesting is structured - it cannot use more accurate stop loss signal for daily candles,
+like Trading Strategy is doing.
+
+
+
+## Example files
+
+The example strategy is presented as  
 
 - [PineScript source file](./bollinger_band_example_tradingview_strategy.pine) 
 - [Backtesting Jupyter Notebook for Trading Strategy](./bollinger_band_example_defi_strategy.ipynb)
-
-The example strategy is a Bollinger Band based strategy. 
-It is recommended to be used with
-
-- We target live trading against [ETH/USDC pair on Uniswap v3 on Polygon with 5 BPS fee tier](https://tradingstrategy.ai/trading-view/polygon/uniswap-v3/eth-usdc-fee-5).
-- Volatile cryptocurrencies - tested with ETH/USD
-- Long only - suitable for [DEX spot markets](https://tradingstrategy.ai/glossary/spot-market)
-- Long only strategies do not work well in a descending market like 2021-2023
-- Daily OHCLV candles
 
 ## Notable differences between Python and PineScript
 
@@ -53,9 +74,10 @@ Some major differences between Python and PineScript:
   Whereas in PineScript you need to emulate these. Trading Strategy engine can trigger these more accurately than what you would get 
   in PineScript.
 
-
 Some differences traders should note:
 
+- Trading Strategy use a term [position](https://tradingstrategy.ai/glossary/position) to cover a trading position with entry and exit,
+  where as TradingView is using a term *trade*. This might be confusing because a single position consists of multiple trades.
 - Because the price feed is not 1:1 same (different exchanges),
   different trades will be taken at a different time
 - Depending on a blockchain and DEX, the assets use wrapped token notation.
