@@ -14,7 +14,7 @@ Running your trading strategy on [decentralised exchanges](https://tradingstrate
 - Have 100% control of your strategy market data and live execution
 - [Low trading fees on efficient decentralised markets](https://tradingstrategy.ai/blog/most-efficient-market-is-on-a-public-blockchain-and-decentralised)
 - Convert your trading algorithm to a on-chain fund
-- Benefits of rich Python quant finance libraries like `pandas_ta` and `quantmetrics`=
+  - Benefits of rich Python quant finance libraries like `pandas_ta` and `quantmetrics`=
 
 ## About the example strategy
 
@@ -111,9 +111,6 @@ Some major differences between Python and PineScript:
 - Trading Strategy's `decide_trades()` function is designed to suit all kind of strategies, including portfolio construction, lending strategies,
   liquidity provider positions and such. Thus, it will return a list of trades to be executed on a blockchain to enter a new position
   and you have more finer-grained control than PineScript's entry/exit that has been designed for traditional stock markets.
-- Trading Strategy supports natively *take profit*, *stop loss* and *trailing stop loss* triggers for trading positions.
-  Whereas in PineScript you need to emulate these. Trading Strategy engine can trigger these more accurately than what you would get 
-  in PineScript.
 
 Some differences traders should note:
 
