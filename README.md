@@ -37,7 +37,7 @@ Running your trading strategy on [decentralised exchanges](https://tradingstrate
 - Have 100% control of your strategy market data and live execution
 - [Low trading fees on efficient decentralised markets](https://tradingstrategy.ai/blog/most-efficient-market-is-on-a-public-blockchain-and-decentralised)
 - Convert your trading algorithm to a on-chain fund
-  - Benefits of rich Python quant finance libraries like `pandas_ta` and `quantmetrics`=
+  - Benefits of rich Python quant finance libraries like [pandas_ta](https://github.com/twopirllc/pandas-ta) and [quantstats](https://github.com/ranaroussi/quantstats).
 
 ## Prerequisites
 
@@ -80,13 +80,13 @@ are picked more or less by a gut feeling. Please use this example as learning ma
 
 Find documentation for technical indicators used in the example
 
-- [Exponential moving average (EMA)](https://tradingstrategy.ai/docs/programming/api/technical-analysis/overlap/help/pandas_ta.overlap.ema.html#ema):
+- [Exponential Moving Average (EMA)](https://tradingstrategy.ai/docs/programming/api/technical-analysis/overlap/help/pandas_ta.overlap.ema.html#ema):
   The Exponential Moving Average is a more responsive moving average compared to the Simple Moving Average (SMA). The weights are determined by alpha which is proportional to it’s length. 
 
-- [Relative strength indicator (RSI)](https://tradingstrategy.ai/docs/programming/api/technical-analysis/momentum/help/pandas_ta.momentum.rsi.html#rsi):
+- [Relative Strength Index (RSI)](https://tradingstrategy.ai/docs/programming/api/technical-analysis/momentum/help/pandas_ta.momentum.rsi.html#rsi):
   The Relative Strength Index is a popular momentum oscillator used to measure the velocity as well as the magnitude of directional price movements.
 
-- [Bollinger bands](https://tradingstrategy.ai/docs/programming/api/technical-analysis/volatility/help/pandas_ta.volatility.bbands.html#bbands):
+- [Bollinger Bands (BB)](https://tradingstrategy.ai/docs/programming/api/technical-analysis/volatility/help/pandas_ta.volatility.bbands.html#bbands):
   A popular volatility indicator by John Bollinger.
 
 ## Strategy performance results and algorithm porting notes
