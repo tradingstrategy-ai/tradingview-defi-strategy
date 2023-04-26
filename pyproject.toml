@@ -9,7 +9,7 @@ packages = [{include = "onchain_quant_workshop"}]
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
 pytest = "^7.3.0"
-trade-executor = {git = "https://github.com/tradingstrategy-ai/trade-executor.git", extras = ["web-server", "execution", "quantstats", "data"], rev = "00bb6a4ead6ef8e3e1329cce8274634dacfe1afc" }
+trade-executor = {git = "https://github.com/tradingstrategy-ai/trade-executor.git", extras = ["web-server", "execution", "quantstats", "data"], rev = "5cb756e71591f8477e14bf4ac1930c98cf0d2100" }
 ipython = "^8.12.0"
 #python-dotenv = "^1.0.0"
 ipdb = "^0.13.13"
