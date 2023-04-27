@@ -1374,26 +1374,26 @@ test = ["PyGithub (>=1.54,<2.0)", "hypothesis (>=6.2.0,<7.0)", "hypothesis-jsons
 
 [[package]]
 name = "evm-trace"
-version = "0.1.0a17"
+version = "0.1.0a18"
 description = "evm-trace: Ethereum Virtual Machine transaction tracing tool"
 category = "main"
 optional = false
 python-versions = ">=3.8,<4"
 files = [
-    {file = "evm-trace-0.1.0a17.tar.gz", hash = "sha256:ce4179f622fa9eb4e59a1226c2146a605e810360a88dce746bc2c41128cfc158"},
-    {file = "evm_trace-0.1.0a17-py3-none-any.whl", hash = "sha256:a4c3de581e6ced4c93bd891dcb78c8dffe3f31e0c7a277cafbec93386afe16c9"},
+    {file = "evm-trace-0.1.0a18.tar.gz", hash = "sha256:15ca3d09f1e3d507467c9ddaa6694d11a3e50448183686d62ba433a6816b8d7c"},
+    {file = "evm_trace-0.1.0a18-py3-none-any.whl", hash = "sha256:91248145bcc12c4f388a89afc35099a4bec019969228fc175a39815107e2eaf6"},
 ]
 
 [package.dependencies]
-eth-utils = ">=2"
-ethpm-types = ">=0.4.0,<0.5"
+eth-utils = ">=2.1,<3"
+ethpm-types = ">=0.4.1,<0.5"
 msgspec = ">=0.8"
-py-evm = ">=0.6.0a1"
+py-evm = "0.6.1a2"
 pydantic = ">=1.10.1,<2"
 
 [package.extras]
-dev = ["IPython", "black (>=23.1.0)", "commitizen", "eth-hash[pysha3]", "flake8 (>=5.0.4)", "hypothesis (>=6.2.0,<7.0)", "ipdb", "isort (>=5.10.1)", "mdformat (>=0.7.16)", "mdformat-frontmatter (>=0.4.1)", "mdformat-gfm (>=0.3.5)", "mypy (>=0.991)", "pre-commit", "pytest (>=6.0)", "pytest-cov", "pytest-watch", "pytest-xdist", "setuptools", "twine", "types-setuptools", "wheel"]
-lint = ["black (>=23.1.0)", "flake8 (>=5.0.4)", "isort (>=5.10.1)", "mdformat (>=0.7.16)", "mdformat-frontmatter (>=0.4.1)", "mdformat-gfm (>=0.3.5)", "mypy (>=0.991)", "types-setuptools"]
+dev = ["IPython", "black (>=23.3.0,<24)", "commitizen", "eth-hash[pysha3]", "flake8 (>=6.0.0,<7)", "hypothesis (>=6.2.0,<7.0)", "ipdb", "isort (>=5.10.1,<6)", "mdformat (>=0.7.16)", "mdformat-frontmatter (>=0.4.1)", "mdformat-gfm (>=0.3.5)", "mypy (>=0.991,<1)", "pre-commit", "pytest (>=6.0)", "pytest-cov", "pytest-watch", "pytest-xdist", "setuptools", "twine", "types-setuptools", "wheel"]
+lint = ["black (>=23.3.0,<24)", "flake8 (>=6.0.0,<7)", "isort (>=5.10.1,<6)", "mdformat (>=0.7.16)", "mdformat-frontmatter (>=0.4.1)", "mdformat-gfm (>=0.3.5)", "mypy (>=0.991,<1)", "types-setuptools"]
 release = ["setuptools", "twine", "wheel"]
 test = ["eth-hash[pysha3]", "hypothesis (>=6.2.0,<7.0)", "pytest (>=6.0)", "pytest-cov", "pytest-xdist"]
 
@@ -2948,14 +2948,14 @@ files = [
 
 [[package]]
 name = "nbclassic"
-version = "0.5.5"
+version = "0.5.6"
 description = "Jupyter Notebook as a Jupyter Server extension."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "nbclassic-0.5.5-py3-none-any.whl", hash = "sha256:47791b04dbcb89bf7fde910a3d848fd4793a4248a8936202453631a87da37d51"},
-    {file = "nbclassic-0.5.5.tar.gz", hash = "sha256:d2c91adc7909b0270c73e3e253d3687a6704b4f0a94bc156a37c85eba09f4d37"},
+    {file = "nbclassic-0.5.6-py3-none-any.whl", hash = "sha256:e3c8b7de80046c4a36a74662a5e325386d345289906c618366d8154e03dc2322"},
+    {file = "nbclassic-0.5.6.tar.gz", hash = "sha256:aab53fa1bea084fb6ade5c538b011a4f070c69f88d72878a8e8fb356f152509f"},
 ]
 
 [package.dependencies]
@@ -2969,7 +2969,7 @@ jupyter-server = ">=1.8"
 nbconvert = ">=5"
 nbformat = "*"
 nest-asyncio = ">=1.5"
-notebook-shim = ">=0.1.0"
+notebook-shim = ">=0.2.3"
 prometheus-client = "*"
 pyzmq = ">=17"
 Send2Trash = ">=1.8.0"
@@ -3539,14 +3539,14 @@ testing = ["pytest", "pytest-cov"]
 
 [[package]]
 name = "platformdirs"
-version = "3.3.0"
+version = "3.4.0"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "platformdirs-3.3.0-py3-none-any.whl", hash = "sha256:ea61fd7b85554beecbbd3e9b37fb26689b227ffae38f73353cbcc1cf8bd01878"},
-    {file = "platformdirs-3.3.0.tar.gz", hash = "sha256:64370d47dc3fca65b4879f89bdead8197e93e05d696d6d1816243ebae8595da5"},
+    {file = "platformdirs-3.4.0-py3-none-any.whl", hash = "sha256:01437886022decaf285d8972f9526397bfae2ac55480ed372ed6d9eca048870a"},
+    {file = "platformdirs-3.4.0.tar.gz", hash = "sha256:a5e1536e5ea4b1c238a1364da17ff2993d5bd28e15600c2c8224008aff6bbcad"},
 ]
 
 [package.extras]
@@ -4530,14 +4530,14 @@ files = [
 
 [[package]]
 name = "requests"
-version = "2.28.2"
+version = "2.29.0"
 description = "Python HTTP for Humans."
 category = "main"
 optional = false
-python-versions = ">=3.7, <4"
+python-versions = ">=3.7"
 files = [
-    {file = "requests-2.28.2-py3-none-any.whl", hash = "sha256:64299f4909223da747622c030b781c0d7811e359c37124b4bd368fb8c6518baa"},
-    {file = "requests-2.28.2.tar.gz", hash = "sha256:98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"},
+    {file = "requests-2.29.0-py3-none-any.whl", hash = "sha256:e8f3c9be120d3333921d213eef078af392fba3933ab7ed2d1cba3b56f2568c3b"},
+    {file = "requests-2.29.0.tar.gz", hash = "sha256:f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"},
 ]
 
 [package.dependencies]
@@ -4692,14 +4692,14 @@ doc = ["Sphinx", "sphinx-rtd-theme"]
 
 [[package]]
 name = "send2trash"
-version = "1.8.0"
-description = "Send file to trash natively under Mac OS X, Windows and Linux."
+version = "1.8.2"
+description = "Send file to trash natively under Mac OS X, Windows and Linux"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 files = [
-    {file = "Send2Trash-1.8.0-py3-none-any.whl", hash = "sha256:f20eaadfdb517eaca5ce077640cb261c7d2698385a6a0f072a4a5447fd49fa08"},
-    {file = "Send2Trash-1.8.0.tar.gz", hash = "sha256:d2c24762fd3759860a0aff155e45871447ea58d2be6bdd39b5c8f966a0c99c2d"},
+    {file = "Send2Trash-1.8.2-py3-none-any.whl", hash = "sha256:a384719d99c07ce1eefd6905d2decb6f8b7ed054025bb0e618919f945de4f679"},
+    {file = "Send2Trash-1.8.2.tar.gz", hash = "sha256:c132d59fa44b9ca2b1699af5c86f57ce9f4c5eb56629d5d55fbb7a35f84e2312"},
 ]
 
 [package.extras]
@@ -5020,8 +5020,8 @@ web-server = ["WebTest (>=3.0.0,<4.0.0)", "openapi-core (<0.17)", "pyramid (>=2.
 [package.source]
 type = "git"
 url = "https://github.com/tradingstrategy-ai/trade-executor.git"
-reference = "5cb756e71591f8477e14bf4ac1930c98cf0d2100"
-resolved_reference = "5cb756e71591f8477e14bf4ac1930c98cf0d2100"
+reference = "27ff8d4518ac4518509a283ce71eba583e08ad24"
+resolved_reference = "27ff8d4518ac4518509a283ce71eba583e08ad24"
 
 [[package]]
 name = "trading-strategy"
@@ -5575,14 +5575,14 @@ tests = ["PasteDeploy", "WSGIProxy2", "coverage", "pyquery", "pytest", "pytest-c
 
 [[package]]
 name = "werkzeug"
-version = "2.3.0"
+version = "2.3.1"
 description = "The comprehensive WSGI web application library."
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "Werkzeug-2.3.0-py3-none-any.whl", hash = "sha256:340335057f72974d9281dbaf52c8090a9f9a59ba304ae814bf0656e6559c0020"},
-    {file = "Werkzeug-2.3.0.tar.gz", hash = "sha256:3b6b46926d052b8ebca97c4dc73c12e47bdd07d57ab0600c039c3155450227bc"},
+    {file = "Werkzeug-2.3.1-py3-none-any.whl", hash = "sha256:69a4b8fcbb30a4c3fa81a5cebd961541273e4d222a4c08593b0b18312e14f64a"},
+    {file = "Werkzeug-2.3.1.tar.gz", hash = "sha256:2d35a28a75ae03727eae14ea7d13627c0f77aed6b9998441e6dae0b387f697fc"},
 ]
 
 [package.dependencies]
@@ -5885,4 +5885,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.11"
-content-hash = "8eec06376699d0e5977be5517453c52937b60a0ece0ff6b9ddbc8a5838deac93"
+content-hash = "61541df90f4d0585577f63a4b9d127f2fc3d3b14ad01605fcebce4f2d0c9743b"
