@@ -364,3 +364,12 @@ Baseline: Annual return 14%, max drawdown 7%.
 - [Join the Trading Strategy community Discord for discussion and questions](https://tradingstrategy.ai/docs/)
 - [View our learning material for algorithmic trading](https://tradingstrategy.ai/docs/learn/index.html)
 - [Study other strategy backtesting examples and code samples](https://tradingstrategy.ai/docs/programming/index.html)
+
+Links 
+
+- [Trading Strategy website](https://tradingstrategy.ai)
+- [Blog](https://tradingstrategy.ai/blog)
+- [Twitter](https://twitter.com/TradingProtocol)
+- [Discord](https://tradingstrategy.ai/community#discord) 
+- [Telegram channel](https://t.me/trading_protocol)
+- [Changelog and version history](https://github.com/tradingstrategy-ai/trading-strategy/blob/master/CHANGELOG.md)
