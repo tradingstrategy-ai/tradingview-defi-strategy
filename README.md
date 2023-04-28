@@ -122,9 +122,18 @@ going to loss (vs. 20 BPS fee on Trader Joe).
 
 ![equity curve coinbase with fee](./screenshots/equity-curve-coinbase-with-fees.png)
 
-### Price action and positions
+### Positions taken
 
 Here is a screenshot of individual won/lost positions in Python strategy.
+You can see we have few profitable long duration positions, and very short duration
+unprofitable positions.
+
+![price action and positions](./screenshots/positions.png)
+
+
+### Price action and indicators
+
+Here is a screenshot of the price action and technical indicators of the strategy.
 
 ![price action and positions](./screenshots/price-action-and-positions.png)
 
