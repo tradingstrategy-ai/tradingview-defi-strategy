@@ -1,3 +1,7 @@
+// A workshop example strategy for AVA-USD pair, 4h candles
+//
+// See https://github.com/tradingstrategy-ai/tradingview-defi-strategy for more details
+//
 //@version=5
 strategy("Bollinger bands examples", overlay=true, initial_capital = 5000, default_qty_type = strategy.percent_of_equity, default_qty_value = 50)
 
@@ -11,17 +15,17 @@ length = input.int(20)
 RSIlength = input.int(14)
 
 // RSI threshold for opening a position
-RSIlimit = input.int(50) 
+RSIlimit = input.int(60) 
 
 // BB standard deviation multiplier
-mult = input.float(2.0, minval=0.001, maxval=50)
+stddev = input.float(1.9, minval=0.001, maxval=50)
 
 // Stop loss at 2% of the position value
 stopPerc = input.float(0.98, minval=0, step=0.01) 
 
 // Create Bollinger Band indicators
 basis = ta.ema(source, length)
-dev = mult * ta.stdev(source, length)
+dev = stddev * ta.stdev(source, length)
 upper = basis + dev
 lower = basis - dev
 plot(upper, title="BB_upper", color=color.blue, linewidth=1, style=plot.style_line)
@@ -33,8 +37,8 @@ RSI = ta.rsi(close, RSIlength)
 
 // Inputs that configure the backtest's date range
 useDateFilter = input.bool(true, title="Filter Date Range of Backtest", group="Backtest Time Period")
-backtestStartDate = input.time(timestamp("1 Jan 2022"), title="Start Date", group="Backtest Time Period")
-backtestEndDate = input.time(timestamp("1 Apr 2023"), title="End Date", group="Backtest Time Period")
+backtestStartDate = input.time(timestamp("1 Mar 2022"), title="Start Date", group="Backtest Time Period")
+backtestEndDate = input.time(timestamp("1 Oct 2022"), title="End Date", group="Backtest Time Period")
 
 // Check if current bar falls inside the date range
 inTradeWindow = not useDateFilter or (time >= backtestStartDate and time < backtestEndDate)
@@ -44,7 +48,7 @@ buyEntry = ta.crossover(source, upper)
 
 // Open a new position if we have crossed the upper Bollinger Band 
 // and our RSI is strong enough
-if ta.crossover(source, upper) and inTradeWindow and RSI > RSIlimit and (strategy.position_size == 0)
+if ta.crossover(source, upper) and inTradeWindow and RSI >= RSIlimit and (strategy.position_size == 0)
     strategy.entry("BB Entry", strategy.long, oca_name="BB Entry", comment="Bollinger band entry")
     strategy.exit("Stop loss exist", from_entry="BB Entry", stop=close * stopPerc)
 
@@ -52,4 +56,9 @@ if ta.crossover(source, upper) and inTradeWindow and RSI > RSIlimit and (strateg
 if ta.crossunder(source, basis)
     strategy.close_all(comment="Moving average exit")
 
-
+color rsi_color = RSI >= 50 ? color.green : color.red
+// plot(RSI, "RSI", color=rsi_color)
+band1 = hline(RSIlimit, "Upper Band", color=#787B86)
+bandm = hline(50, "Middle Band", color=color.new(#787B86, 50))
+band0 = hline(30, "Lower Band", color=#787B86)
+fill(band1, band0, color=color.rgb(126, 87, 194, 90), title="Background")

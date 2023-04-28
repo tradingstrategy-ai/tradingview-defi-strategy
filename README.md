@@ -94,18 +94,16 @@ Find documentation for technical indicators used in the example
 
 Both TradingView and Trading Strategy strategies open positions in a similar fashion, so they are more or less comparable.
 
-**Because of the different price feeds and other subtle differences you cannot have the same strategy backtest
-    result on two different markets**.
+**Note**. Because of the different price feeds and other subtle differences you cannot have the same strategy backtest
+    result on two different markets: Coinbase and Trader Joe.**. If you carefully examine the price chart, RSI and other indicators,
+    you will see the results vary a bit. In such a small backtesting timeframe, this strategy is prone to small fluxuations
+    and is not robust. The goal of this example, however, is not robustness, but easily demonstrable data.
 
-At least some of positions like ~Jul 20th are opened around the same time, 
+If you examine, some of positions like ~March 17th are opened around the same time, 
 so we do see that the strategy is following the same pattern.
 
-**Note**: Minor differences between TradingView and Python technical indicator calculations 
-might result to different code execution. However, the example code should be matching enough to demostrate how
-to port over TradingView scripts.
-
 Both strategy implementations make a low number of trades, 10-20, for the backtesting period.
-This makes it easier to demostrate the the example.
+This makes it easier to demonstrate the example.
 
 ### Equity curve
 
@@ -133,18 +131,18 @@ Here is a screenshot of individual won/lost positions in Python strategy.
 Summary statistics are calculated as follow:
 
 ```                                                
-Trading period length                     357 days
-Return %                                    15.80%
-Annualised return %                         16.15%
+Trading period length                     145 days
+Return %                                    11.90%
+Annualised return %                         29.88%
 Cash at start                            $5,000.00
-Value at end                             $5,789.98
-Trade volume                            $32,605.76
-Position win percent                        33.33%
-Total positions                                  6
-Won positions                                    2
+Value at end                             $5,594.84
+Trade volume                            $47,387.00
+Position win percent                        55.56%
+Total positions                                  9
+Won positions                                    5
 Lost positions                                   4
 Stop losses triggered                            4
-Stop loss % of all                          66.67%
+Stop loss % of all                          44.44%
 Stop loss % of lost                        100.00%
 Winning stop losses                              0
 Winning stop losses percent                  0.00%
@@ -155,25 +153,26 @@ Take profit % of all                         0.00%
 Take profit % of won                         0.00%
 Zero profit positions                            0
 Positions open at the end                        0
-Realised profit and loss                   $789.98
+Realised profit and loss                   $594.84
 Portfolio unrealised value                   $0.00
 Extra returns on lending pool interest       $0.00
-Cash left at the end                     $5,789.98
-Average winning position profit %           20.72%
-Average losing position loss %              -2.50%
-Biggest winning position %                  22.55%
-Biggest losing position %                   -2.95%
-Average duration of winning positions      35 days
-Average duration of losing positions        5 days
-LP fees paid                                $16.31
-LP fees paid % of volume                     0.05%
-Average position:                            5.24%
-Median position:                            -2.16%
-Most consecutive wins                            1
-Most consecutive losses                          2
-Biggest realized risk                       -1.47%
-Avg realised risk                           -1.25%
-Max pullback of total capital               -2.91%
+Cash left at the end                     $5,594.84
+Average winning position profit %            6.72%
+Average losing position loss %              -2.57%
+Biggest winning position %                  12.12%
+Biggest losing position %                   -2.76%
+Average duration of winning positions       3 days
+Average duration of losing positions        0 days
+LP fees paid                                $94.87
+LP fees paid % of volume                     0.20%
+Average position:                            2.59%
+Median position:                             1.65%
+Most consecutive wins                            2
+Most consecutive losses                          3
+Biggest realized risk                       -1.38%
+Avg realised risk                           -1.28%
+Max pullback of total capital               -4.00%
+Max loss risk at opening of position         1.10%
 ```
 
 ### Position timeline
