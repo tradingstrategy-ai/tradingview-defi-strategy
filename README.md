@@ -25,6 +25,8 @@ This example repository was made for [Avalanche Summit II workshop](https://trad
    * [Running backtests](#running-backtests)
       * [Running backtest notebooks from terminal](#running-backtest-notebooks-from-terminal)
       * [Running backtest notebooks with Visual Studio Code](#running-backtest-notebooks-with-visual-studio-code)
+      * [Running backtest notebooks Jupyter](#running-backtest-notebooks-jupyter)
+   * [Variations of the backtest example](#variations-of-the-backtest-example)
    * [Next steps](#next-steps)
 
 
@@ -305,15 +307,17 @@ jupyter notebook
 ```
 Then choose a notebook from the file explorer and run it
 
-## Alternative backtesting versions
+## Variations of the backtest example
 
 We have created some alternatives on the notebook to show how it affects profit and loss
 
-- Trailing stop loss
-- All in: Use 90% of cash instead of 50% of cash when entering a position
-- Multipair: Trade more than single pair
-- Uniswap full history: Trade on ETH-USD pair based on Uniswap v2, so we get full 3 years of backtesting history
-- Uniswap 1h candles: Trade very frequently
+Baseline: Annual return 14%, max drawdown 7%.
+
+- [Trailing stop loss](/delayed_trailing_stop_loss.ipynb) - Annual return 18%, max drawdown 7%
+- [All in](./all_in.ipynb): Use 90% of cash instead of 50% of cash when entering a position. Realised profit $300 -> $600.
+- [Multipair](./multipair.ipynb): Trade more than single pair
+- [Uniswap full history](/uniswap_v2_full_history.ipynb): Trade on ETH-USD pair based on Uniswap v2, so we get max DEX 2020-2023 backtesting history
+- [Uniswap 1h candles](./uniswap_v2_1h_candle_stddev_1.ipynb): Same as above, but trade very frequently
 
 ## Next steps
 
