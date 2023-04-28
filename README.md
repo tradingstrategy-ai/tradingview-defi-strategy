@@ -58,23 +58,24 @@ To work with this example, you need to have
 
 ## About the example strategy
 
-The example strategy is a simplified [Bollinger band](https://github.com/tradingstrategy-ai/tradingview-defi-strategy) strategy.
+The example strategy is a simple [Bollinger band](https://tradingstrategy.ai/glossary/bollinger-bands) strategy.
 **Whether it makes profit or not is outside the scope of the example.** The strategy is not optimised at all and parameters
 are picked more or less by a gut feeling. Please use this example as learning material and base for your own strategies. 
 
-- Use Bollinger Band's and [RSI](equity-curve-coinbase-with-fees.png) to determine position entries
-- Long only - suitable for [DEX spot markets](https://tradingstrategy.ai/glossary/spot-market)
-- Daily timeframe for candles
-- Backtesting period of 2022-01-01 - 2023-04-01
+- Use [Bollinger Band's](https://tradingstrategy.ai/glossary/bollinger-bands) and [RSI](https://tradingstrategy.ai/glossary/relative-strength-index-(rsi)) to determine position entries
+- Long only - suitable for [DEX spot markets](https://tradingstrategy.ai/glossary/spot-market) like Trader Joe
+- 4 hours timeframe for candles
+- Backtesting period of 2024-04-01 - 2023-04-01
 - Use a tight stop loss when entering a position
-  - This will result to multiple positions closed for stop loss and few profitable positions during market rallies
+  - This will result multiple positions closed for stop loss and few profitable positions during market rallies
 
 - We target the following live trading pairs 
-  - [ETH/USDC pair on Uniswap v3 on Polygon with 5 BPS fee tier](https://tradingstrategy.ai/trading-view/polygon/uniswap-v3/eth-usdc-fee-5).
+  - [EAVAXTH/USDC pair on Trader Joe on Avalanche with 20 BPS fee tier](https://tradingstrategy.ai/trading-view/polygon/uniswap-v3/eth-usdc-fee-5).
     See a note about this in `decide_trades()` Python code.
   - [Coinbase ETH/USDC with 60 BPS market taker fee](https://help.coinbase.com/en/exchange/trading-and-funding/exchange-fees) (12x more expensive than DeFi)
  
-**Note**: Long only strategies are challenging in a descending or sideways cryptocurrencies market like 2021-2023.
+**Note**: Long only strategies are challenging in a descending or sideways cryptocurrencies market like 2021-2023. Furthermore, this strategy was handpicked
+for an overly short backtesting period, to better illustrate the features of the backtesting framework.
 
 ### Technical indicator documentation
 
@@ -108,11 +109,11 @@ This makes it easier to demostrate the the example.
 
 ### Equity curve
 
-How well the strategy would have historically performed on ETH-USDC pair on Uniswap v3 on Polygon (5 BPS fee).
+How well the strategy would have historically performed on AVAX-USDC pair on Trader Joe on Avalanche (20 BPS fee).
 
 ![equity curve trading strategy](./screenshots/equity-curve.png)
 
-How well the strategy would have historically performed on ETH-USDC on Coinbase (no fees).
+How well the strategy would have historically performed on AVAX-USD on Coinbase (no fees).
 
 ![equity curve coinbase](./screenshots/equity-curve-coinbase.png)
 
@@ -305,9 +306,18 @@ jupyter notebook
 ```
 Then choose a notebook from the file explorer and run it
 
+## Alternative backtesting versions
+
+We have created some alternatives on the notebook to show how it affects profit and loss
+
+- Trailing stop loss
+- All in: Use 90% of cash instead of 50% of cash when entering a position
+- Multipair: Trade more than single pair
+- Uniswap full history: Trade on ETH-USD pair based on Uniswap v2, so we get full 3 years of backtesting history
+- Uniswap 1h candles: Trade very frequently
 
 ## Next steps
 
-- [Join Trading Strategy community Discord for discussion and questions](https://tradingstrategy.ai/docs/)
+- [Join the Trading Strategy community Discord for discussion and questions](https://tradingstrategy.ai/docs/)
 - [View our learning material for algorithmic trading](https://tradingstrategy.ai/docs/learn/index.html)
 - [Study other strategy backtesting examples and code samples](https://tradingstrategy.ai/docs/programming/index.html)
