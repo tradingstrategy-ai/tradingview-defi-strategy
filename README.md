@@ -116,7 +116,7 @@ How well the strategy would have historically performed on AVAX-USD on Coinbase 
 ![equity curve coinbase](./screenshots/equity-curve-coinbase.png)
 
 However, if we switch on 50 BPS taker fee on Coinbase we can see it destroys the strategy performance,
-going to loss. 
+going to loss (vs. 20 BPS fee on Trader Joe).
 
 ![equity curve coinbase with fee](./screenshots/equity-curve-coinbase-with-fees.png)
 
