@@ -1348,14 +1348,14 @@ test = ["hypothesis (>=4.43.0,<5.0.0)", "pytest (>=6.2.5,<7)", "pytest-xdist", "
 
 [[package]]
 name = "ethpm-types"
-version = "0.4.3"
+version = "0.4.4"
 description = "ethpm_types: Implementation of EIP-2678"
 category = "main"
 optional = false
 python-versions = ">=3.8,<3.11"
 files = [
-    {file = "ethpm-types-0.4.3.tar.gz", hash = "sha256:787577dee2b93ced4d92d1dd8e12c03ccafed13d3e97ff224b06a7b5bafb4f15"},
-    {file = "ethpm_types-0.4.3-py3-none-any.whl", hash = "sha256:f431cc4030db823d556f1aa253321588d7d5cab67df87e5271b3fe13bdc592df"},
+    {file = "ethpm-types-0.4.4.tar.gz", hash = "sha256:30d08a1da87dc87fe97112198d4a4f385d38cc122a867d0102fa54f97e8559d8"},
+    {file = "ethpm_types-0.4.4-py3-none-any.whl", hash = "sha256:02ad8a63da2c9e3aec643bd7aeb8a940cf8e8be18a6b2cac0326348d85b60d90"},
 ]
 
 [package.dependencies]
@@ -1426,28 +1426,6 @@ files = [
 
 [package.extras]
 tests = ["asttokens", "littleutils", "pytest", "rich"]
-
-[[package]]
-name = "fastapi"
-version = "0.95.1"
-description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "fastapi-0.95.1-py3-none-any.whl", hash = "sha256:a870d443e5405982e1667dfe372663abf10754f246866056336d7f01c21dab07"},
-    {file = "fastapi-0.95.1.tar.gz", hash = "sha256:9569f0a381f8a457ec479d90fa01005cfddaae07546eb1f3fa035bc4797ae7d5"},
-]
-
-[package.dependencies]
-pydantic = ">=1.6.2,<1.7 || >1.7,<1.7.1 || >1.7.1,<1.7.2 || >1.7.2,<1.7.3 || >1.7.3,<1.8 || >1.8,<1.8.1 || >1.8.1,<2.0.0"
-starlette = ">=0.26.1,<0.27.0"
-
-[package.extras]
-all = ["email-validator (>=1.1.1)", "httpx (>=0.23.0)", "itsdangerous (>=1.1.0)", "jinja2 (>=2.11.2)", "orjson (>=3.2.1)", "python-multipart (>=0.0.5)", "pyyaml (>=5.3.1)", "ujson (>=4.0.1,!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0)", "uvicorn[standard] (>=0.12.0)"]
-dev = ["pre-commit (>=2.17.0,<3.0.0)", "ruff (==0.0.138)", "uvicorn[standard] (>=0.12.0,<0.21.0)"]
-doc = ["mdx-include (>=1.4.1,<2.0.0)", "mkdocs (>=1.1.2,<2.0.0)", "mkdocs-markdownextradata-plugin (>=0.1.7,<0.3.0)", "mkdocs-material (>=8.1.4,<9.0.0)", "pyyaml (>=5.3.1,<7.0.0)", "typer-cli (>=0.0.13,<0.0.14)", "typer[all] (>=0.6.1,<0.8.0)"]
-test = ["anyio[trio] (>=3.2.1,<4.0.0)", "black (==23.1.0)", "coverage[toml] (>=6.5.0,<8.0)", "databases[sqlite] (>=0.3.2,<0.7.0)", "email-validator (>=1.1.1,<2.0.0)", "flask (>=1.1.2,<3.0.0)", "httpx (>=0.23.0,<0.24.0)", "isort (>=5.0.6,<6.0.0)", "mypy (==0.982)", "orjson (>=3.2.1,<4.0.0)", "passlib[bcrypt] (>=1.7.2,<2.0.0)", "peewee (>=3.13.3,<4.0.0)", "pytest (>=7.1.3,<8.0.0)", "python-jose[cryptography] (>=3.3.0,<4.0.0)", "python-multipart (>=0.0.5,<0.0.7)", "pyyaml (>=5.3.1,<7.0.0)", "ruff (==0.0.138)", "sqlalchemy (>=1.3.18,<1.4.43)", "types-orjson (==3.6.2)", "types-ujson (==5.7.0.1)", "ujson (>=4.0.1,!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0,<6.0.0)"]
 
 [[package]]
 name = "fastjsonschema"
@@ -4215,19 +4193,14 @@ docs = ["Sphinx (>=4.4.0,<5.0.0)", "sphinx-autodoc-typehints[docs] (>=1.16.0,<2.
 
 [[package]]
 name = "python-logstash-tradingstrategy"
-version = "0.5.0"
-description = "Python logging handler for Logstash (forked)."
+version = "0.5.1"
+description = "Python logging handler for Logstash (forked)"
 category = "main"
 optional = false
 python-versions = "*"
-files = []
-develop = false
-
-[package.source]
-type = "git"
-url = "https://github.com/tradingstrategy-ai/python-logstash.git"
-reference = "982dd3e6a374b443f14139508f0c12423193755a"
-resolved_reference = "982dd3e6a374b443f14139508f0c12423193755a"
+files = [
+    {file = "python-logstash-tradingstrategy-0.5.1.tar.gz", hash = "sha256:f98b43ac53adaef0bd4e1da84d2c2ab8e8ceebba76b412a9d63c89c1ea9207a4"},
+]
 
 [[package]]
 name = "pytz"
@@ -4793,24 +4766,6 @@ pure-eval = "*"
 tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
-name = "starlette"
-version = "0.26.1"
-description = "The little ASGI library that shines."
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "starlette-0.26.1-py3-none-any.whl", hash = "sha256:e87fce5d7cbdde34b76f0ac69013fd9d190d581d80681493016666e6f96c6d5e"},
-    {file = "starlette-0.26.1.tar.gz", hash = "sha256:41da799057ea8620e4667a3e69a5b1923ebd32b1819c8fa75634bbe8d8bea9bd"},
-]
-
-[package.dependencies]
-anyio = ">=3.4.0,<5"
-
-[package.extras]
-full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart", "pyyaml"]
-
-[[package]]
 name = "tabulate"
 version = "0.9.0"
 description = "Pretty-print tabular data"
@@ -4975,64 +4930,60 @@ tqdm = ">=4.64.1,<5.0.0"
 
 [[package]]
 name = "trade-executor"
-version = "0.2"
-description = "Trading strategy execution and backtesting"
+version = "0.3"
+description = "Algorithmic trading backtesting and execution engine for decentralised finance"
 category = "main"
 optional = false
 python-versions = ">=3.10,<3.11"
-files = []
-develop = false
+files = [
+    {file = "trade_executor-0.3-py3-none-any.whl", hash = "sha256:86341aaaa05f7b1d2473138a6c0cba54d98a41a1803aefb276313ccabdef57cc"},
+    {file = "trade_executor-0.3.tar.gz", hash = "sha256:8abcab3edad2d827ee3691eea64909e06236b3347c6f4a1f482d58d06b340bc7"},
+]
 
 [package.dependencies]
-APScheduler = {version = "^3.9.1", optional = true}
-colorama = {version = "^0.4.4", optional = true}
-coloredlogs = {version = "^15.0.1", optional = true}
+APScheduler = {version = ">=3.9.1,<4.0.0", optional = true, markers = "extra == \"execution\""}
+colorama = {version = ">=0.4.4,<0.5.0", optional = true, markers = "extra == \"execution\""}
+coloredlogs = {version = ">=15.0.1,<16.0.0", optional = true, markers = "extra == \"execution\""}
 ipywidgets = ">=7.0,<8.0"
-jupyterlab = "^3.5.0"
-kaleido = {version = "0.2.1", optional = true}
-matplotlib = "^3.6.0"
-openapi-core = {version = "<0.17", optional = true}
-pandas-ta = "^0.3.14-beta.0"
-prompt-toolkit = {version = "^3.0.31", optional = true}
-pyramid = {version = "^2.0", optional = true}
-pyramid-openapi3 = {version = "^0.16.0", optional = true}
-python-dotenv = {version = "^0.21.0", optional = true}
-python-logging-discord-handler = {version = "^0.1.3", optional = true}
-python-logstash-tradingstrategy = {git = "https://github.com/tradingstrategy-ai/python-logstash.git", rev = "982dd3e6a374b443f14139508f0c12423193755a"}
-quantstats = {version = "^0.0.59", optional = true}
-requests = "^2.27.1"
-tblib = "^1.7.0"
-tqdm = "^4.64.1"
+jupyterlab = ">=3.5.0,<4.0.0"
+kaleido = {version = "0.2.1", optional = true, markers = "extra == \"execution\""}
+matplotlib = ">=3.6.0,<4.0.0"
+openapi-core = {version = "<0.17", optional = true, markers = "extra == \"web-server\""}
+pandas-ta = ">=0.3.14-beta.0,<0.4.0"
+prompt-toolkit = {version = ">=3.0.31,<4.0.0", optional = true, markers = "extra == \"execution\""}
+pyramid = {version = ">=2.0,<3.0", optional = true, markers = "extra == \"web-server\""}
+pyramid-openapi3 = {version = ">=0.16.0,<0.17.0", optional = true, markers = "extra == \"web-server\""}
+python-dotenv = {version = ">=0.21.0,<0.22.0", optional = true, markers = "extra == \"execution\""}
+python-logging-discord-handler = {version = ">=0.1.3,<0.2.0", optional = true, markers = "extra == \"execution\""}
+python-logstash-tradingstrategy = {version = "0.5.1", optional = true, markers = "extra == \"execution\""}
+quantstats = {version = ">=0.0.59,<0.0.60", optional = true, markers = "extra == \"quantstats\""}
+requests = ">=2.27.1,<3.0.0"
+tblib = ">=1.7.0,<2.0.0"
+tqdm = ">=4.64.1,<5.0.0"
 tqdm-loggable = "0.1.3"
-trading-strategy = "0.13.18"
-typer = {version = "^0.4.0", optional = true}
-waitress = {version = "^2.0.0", optional = true}
-web3-ethereum-defi = "0.18.3"
-WebTest = {version = "^3.0.0", optional = true}
+trading-strategy = "0.14"
+typer = {version = ">=0.4.0,<0.5.0", optional = true, markers = "extra == \"execution\""}
+waitress = {version = ">=2.0.0,<3.0.0", optional = true, markers = "extra == \"web-server\""}
+web3-ethereum-defi = {version = "0.18.3", optional = true, markers = "extra == \"data\""}
+WebTest = {version = ">=3.0.0,<4.0.0", optional = true, markers = "extra == \"web-server\""}
 
 [package.extras]
 data = ["web3-ethereum-defi (==0.18.3)"]
-execution = ["APScheduler (>=3.9.1,<4.0.0)", "colorama (>=0.4.4,<0.5.0)", "coloredlogs (>=15.0.1,<16.0.0)", "kaleido (==0.2.1)", "prompt-toolkit (>=3.0.31,<4.0.0)", "python-dotenv (>=0.21.0,<0.22.0)", "python-logging-discord-handler (>=0.1.3,<0.2.0)", "python-logstash-tradingstrategy @ git+https://github.com/tradingstrategy-ai/python-logstash.git@982dd3e6a374b443f14139508f0c12423193755a", "typer (>=0.4.0,<0.5.0)"]
+execution = ["APScheduler (>=3.9.1,<4.0.0)", "colorama (>=0.4.4,<0.5.0)", "coloredlogs (>=15.0.1,<16.0.0)", "kaleido (==0.2.1)", "prompt-toolkit (>=3.0.31,<4.0.0)", "python-dotenv (>=0.21.0,<0.22.0)", "python-logging-discord-handler (>=0.1.3,<0.2.0)", "python-logstash-tradingstrategy (==0.5.1)", "typer (>=0.4.0,<0.5.0)"]
 qstrader = ["trading-strategy-qstrader (>=0.5,<0.6)"]
 quantstats = ["quantstats (>=0.0.59,<0.0.60)"]
 web-server = ["WebTest (>=3.0.0,<4.0.0)", "openapi-core (<0.17)", "pyramid (>=2.0,<3.0)", "pyramid-openapi3 (>=0.16.0,<0.17.0)", "waitress (>=2.0.0,<3.0.0)"]
 
-[package.source]
-type = "git"
-url = "https://github.com/tradingstrategy-ai/trade-executor.git"
-reference = "27ff8d4518ac4518509a283ce71eba583e08ad24"
-resolved_reference = "27ff8d4518ac4518509a283ce71eba583e08ad24"
-
 [[package]]
 name = "trading-strategy"
-version = "0.13.18"
+version = "0.14"
 description = "DEX and cryptocurrency trading data for Python - OHCLV, Uniswap, others"
 category = "main"
 optional = false
 python-versions = ">=3.10,<3.11"
 files = [
-    {file = "trading_strategy-0.13.18-py3-none-any.whl", hash = "sha256:7a74608b8e3a52ffb9d3d751a703ee7fdb0c9bd8e2a94b97b55e1a8e71b8335a"},
-    {file = "trading_strategy-0.13.18.tar.gz", hash = "sha256:3013da7d7f995a181f9f724f650e9d1406d338df197fb989f8a5570bd3bb638e"},
+    {file = "trading_strategy-0.14-py3-none-any.whl", hash = "sha256:64ba4a0772f181b6536bf5f515bcefe74ec50a9e6b4ebd7f941f970948a5eb8c"},
+    {file = "trading_strategy-0.14.tar.gz", hash = "sha256:e5a1c27cad84ceab9577de647da6f9ad596ce96f909ef976683ad8df655085c7"},
 ]
 
 [package.dependencies]
@@ -5575,14 +5526,14 @@ tests = ["PasteDeploy", "WSGIProxy2", "coverage", "pyquery", "pytest", "pytest-c
 
 [[package]]
 name = "werkzeug"
-version = "2.3.1"
+version = "2.3.2"
 description = "The comprehensive WSGI web application library."
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "Werkzeug-2.3.1-py3-none-any.whl", hash = "sha256:69a4b8fcbb30a4c3fa81a5cebd961541273e4d222a4c08593b0b18312e14f64a"},
-    {file = "Werkzeug-2.3.1.tar.gz", hash = "sha256:2d35a28a75ae03727eae14ea7d13627c0f77aed6b9998441e6dae0b387f697fc"},
+    {file = "Werkzeug-2.3.2-py3-none-any.whl", hash = "sha256:b7b8bc1609f35ae8e45d48a9b58d7a4eb1e41eec148d37e977e5df6ebf3398b2"},
+    {file = "Werkzeug-2.3.2.tar.gz", hash = "sha256:2f3278e9ef61511cdf82cc28fc5da0f5b501dd8f01ecf5ef6a5d810048f68702"},
 ]
 
 [package.dependencies]
@@ -5885,4 +5836,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.11"
-content-hash = "61541df90f4d0585577f63a4b9d127f2fc3d3b14ad01605fcebce4f2d0c9743b"
+content-hash = "df6bd0aa0434a67f8eb46f70e32397132fe98f9f30ce63dc115fbb0a16e34f61"
