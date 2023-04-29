@@ -1,9 +1,10 @@
  # TradingView to TradingStrategy.ai algorithmic DeFi trading strategy conversion
 
-This is an example Python project how to convert a TradingView based PineScript algorithmic 
-trading strategy to [TradingStrategy.ai](https://tradingstrategy.ai) Python format.
+This is an example Python project on how to convert TradingView-based PineScript algorithmic 
+trading strategies to [TradingStrategy.ai](https://tradingstrategy.ai) [Python format](https://tradingstrategy.ai/docs/).
 
 This example repository was made for [Avalanche Summit II workshop](https://tradingstrategy.ai/blog/avalanche-summit-ii-workshop).
+[See the example Github repository here](https://github.com/tradingstrategy-ai/tradingview-defi-strategy).
 
    * [Benefits of DeFi for algorithmic traders](#benefits-of-defi-for-algorithmic-traders)
    * [Prerequisites](#prerequisites)

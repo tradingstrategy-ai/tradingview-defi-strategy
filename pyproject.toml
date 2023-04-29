@@ -1,19 +1,20 @@
 [tool.poetry]
 name = "tradingview-defi-strategy"
 version = "0.1.0"
-description = "An example how to convert PineScript based algorithmig trading strategy for DeFi"
+description = "Convert TradingView and PineScript based algorithmig trading strategies for DeFi. An example repository."
 authors = ["Mikko Ohtamaa <mikko@opensourcehacker.com>"]
+license = "MIT"
 readme = "README.md"
-packages = [{include = "onchain_quant_workshop"}]
+keywords = ["algorithmic trading", "ethereum", "cryptocurrency", "tradingview", "quantitative finance", "binance", "coinbase", "uniswap"]
+homepage = "https://tradingstrategy.ai"
+repository = "https://github.com/tradingstrategy-ai/tradingview-defi-strategy"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
 pytest = "^7.3.0"
 trade-executor = {git = "https://github.com/tradingstrategy-ai/trade-executor.git", extras = ["web-server", "execution", "quantstats", "data"], rev = "a253c84e05cbc0346a2b12bf69a4bb4334fba129" }
 ipython = "^8.12.0"
-#python-dotenv = "^1.0.0"
 ipdb = "^0.13.13"
-fastapi = "^0.95.0"
 
 [build-system]
 requires = ["poetry-core"]
