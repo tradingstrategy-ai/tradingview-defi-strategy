@@ -12,7 +12,8 @@ repository = "https://github.com/tradingstrategy-ai/tradingview-defi-strategy"
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
 pytest = "^7.3.0"
-trade-executor = {version = "0.3", extras = ["web-server", "execution", "quantstats", "data"]}
+# trade-executor = {version = "0.3", extras = ["web-server", "execution", "quantstats", "data"]}
+trade-executor = {git = "https://github.com/tradingstrategy-ai/trade-executor.git", extras = ["web-server", "execution", "quantstats", "data"], rev = "09c236008d1e8768a12396d61eaab5df003c8b48" }
 ipython = "^8.12.0"
 ipdb = "^0.13.13"
 
