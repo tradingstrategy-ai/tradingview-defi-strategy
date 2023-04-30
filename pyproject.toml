@@ -13,7 +13,7 @@ repository = "https://github.com/tradingstrategy-ai/tradingview-defi-strategy"
 python = ">=3.10,<3.11"
 pytest = "^7.3.0"
 # trade-executor = {version = "0.3", extras = ["web-server", "execution", "quantstats", "data"]}
-trade-executor = {git = "https://github.com/tradingstrategy-ai/trade-executor.git", extras = ["web-server", "execution", "quantstats", "data"], rev = "09c236008d1e8768a12396d61eaab5df003c8b48" }
+trade-executor = {git = "https://github.com/tradingstrategy-ai/trade-executor.git", extras = ["web-server", "execution", "quantstats", "data"], rev = "6ec319faa6dc9a98e4991d975ad26320922a0ffe" }
 ipython = "^8.12.0"
 ipdb = "^0.13.13"
 
