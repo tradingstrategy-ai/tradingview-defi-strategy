@@ -1,4 +1,4 @@
- # TradingView to TradingStrategy.ai algorithmic DeFi trading strategy conversion
+ # TradingView / Coinbase to DeFi / Trader Joee algorithmic trading strategy conversion
 
 This is an example Python project on how to convert TradingView-based PineScript algorithmic 
 trading strategies to [TradingStrategy.ai](https://tradingstrategy.ai) [Python format](https://tradingstrategy.ai/docs/).
