@@ -357,6 +357,7 @@ Baseline: Annual return 14%, max drawdown 7%.
 - [Trailing stop loss](/delayed_trailing_stop_loss.ipynb) - Annual return 18%, max drawdown 7%
 - [All in](./all_in.ipynb): Use 90% of cash instead of 50% of cash when entering a position. Realised profit $300 -> $600.
 - [Multipair](./multipair.ipynb): Trade more than single pair
+- [Grid search](./grid_search.ipynb): Automatically search through strategy parameters for an optional combination
 - [Uniswap full history](/uniswap_v2_full_history.ipynb): Trade on ETH-USD pair based on Uniswap v2, so we get max DEX 2020-2023 backtesting history
 - [Uniswap 1h candles](./uniswap_v2_1h_candle_stddev_1.ipynb): Same as above, but trade very frequently
 
