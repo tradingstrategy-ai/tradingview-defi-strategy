@@ -384,4 +384,3 @@ Links
 - [Twitter](https://twitter.com/TradingProtocol)
 - [Discord](https://tradingstrategy.ai/community#discord) 
 - [Telegram channel](https://t.me/trading_protocol)
-- [Changelog and version history](https://github.com/tradingstrategy-ai/trading-strategy/blob/master/CHANGELOG.md)
