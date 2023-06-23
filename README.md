@@ -3,6 +3,10 @@
 This is an example Python project on how to convert TradingView-based PineScript algorithmic 
 trading strategies to [TradingStrategy.ai](https://tradingstrategy.ai) [Python format](https://tradingstrategy.ai/docs/).
 
+[![Watch the recorded workshop session for this project](https://img.youtube.com/vi/Pwst54BGCEM/maxresdefault.jpg)](https://www.youtube.com/watch?v=Pwst54BGCEM)
+
+**[Watch the recorded workshop session on YouTube](https://www.youtube.com/watch?v=Pwst54BGCEM)**
+
 This example repository was made for [Avalanche Summit II workshop](https://tradingstrategy.ai/blog/avalanche-summit-ii-workshop).
 [See the example Github repository here](https://github.com/tradingstrategy-ai/tradingview-defi-strategy).
 
