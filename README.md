@@ -55,15 +55,17 @@ To work with this example, you need to have
 - Basic experience in cryptocurrencies
 - Basic experience in trading
 - Experience in TradingView's PineScript
-- Junior software developer level experience in Python
+- Junior level experience in Python
 
 ### Software 
 
 - Python 3.10
-- [Poetry package manager for Python](https://tradingstrategy.ai/community)
+- [Poetry package manager for Python](https://python-poetry.org/docs/#installing-with-the-official-installer)
 - Git
 
 ## About the example strategy
+
+The example strategy backtest is in  [bollinger_band_example_defi_strategy.ipynb](.bollinger_band_example_defi_strategy.ipynb) notebook.
 
 The example strategy is a simple [Bollinger band](https://tradingstrategy.ai/glossary/bollinger-bands) strategy.
 **Whether it makes profit or not is outside the scope of the example.** The strategy is not optimised at all and parameters
