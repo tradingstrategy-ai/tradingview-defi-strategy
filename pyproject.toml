@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tradingview-defi-strategy"
-version = "0.1.0"
+version = "0.2.0"
 description = "Convert TradingView and PineScript based algorithmig trading strategies for DeFi. An example repository."
 authors = ["Mikko Ohtamaa <mikko@opensourcehacker.com>"]
 license = "MIT"
